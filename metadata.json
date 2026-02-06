@@ -1,0 +1,5 @@
+{
+  "name": "Copy of Sovereign BTC Worker",
+  "description": "A Cloudflare Workers API for managing Bitcoin education platform users, applications, and admin operations using Hono, D1, and KV.",
+  "requestFramePermissions": []
+}

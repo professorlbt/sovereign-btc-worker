@@ -1,0 +1,23 @@
+{
+  "name": "sovereign-btc-worker",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "start": "wrangler dev",
+    "db:init": "wrangler d1 execute sovereign-db --file=./schema.sql",
+    "db:seed": "wrangler d1 execute sovereign-db --file=./seed.sql"
+  },
+  "dependencies": {
+    "hono": "^4.0.0",
+    "bcryptjs": "^2.4.3",
+    "jose": "^5.2.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240101.0",
+    "@types/bcryptjs": "^2.4.6",
+    "typescript": "^5.0.0",
+    "wrangler": "^3.0.0"
+  }
+}

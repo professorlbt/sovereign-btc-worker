@@ -1,0 +1,38 @@
+name = "sovereign-btc-worker"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+
+# ---------- D1 DATABASE ----------
+[[d1_databases]]
+binding = "DB"
+database_name = "sovereign-btc-db"
+database_id = "0d9184ec-6329-4f10-84d4-a9a52279ec14"
+
+# ---------- KV NAMESPACES ----------
+[[kv_namespaces]]
+binding = "USERS_KV"
+id = "bff4a6888d3b4fa1b000cc85169f2358"
+
+# Optional: Rate limiting KV (If you create another KV for this, uncomment below)
+# [[kv_namespaces]]
+# binding = "RATE_LIMITS"
+# id = "INSERT-KV-ID-RATE-LIMITS"
+
+# ---------- R2 BUCKETS ----------
+[[r2_buckets]]
+binding = "FILES"
+bucket_name = "sovereign-btc-files"
+
+# ---------- ENVIRONMENTS ----------
+[env.production]
+name = "sovereign-btc-api"
+
+[env.staging]
+name = "sovereign-btc-api-staging"
+
+[env.development]
+name = "sovereign-btc-api-dev"
+
+[vars]
+ENVIRONMENT = "production"
+# Secrets (ADMIN_JWT_SECRET, ADMIN_PASSWORD_HASH) must be set via `wrangler secret put`
